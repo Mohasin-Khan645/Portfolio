@@ -31,9 +31,67 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   type();
+
+  // Navigation menu
+  const navMenu = document.getElementById('nav-menu');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelectorAll('.nav__link');
+  const sections = document.querySelectorAll('section');
+
+  // Toggle mobile menu
+  if (navToggle) {
+      navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+      });
+  }
+
+  // Close mobile menu when clicking on a nav link
+  navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+      });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+          navMenu.classList.remove('active');
+      }
+  });
+
+  // Smooth scroll for navigation links
+  navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      });
+  });
+
+  // Add active class to current section in viewport
+  window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 60) {
+              current = section.getAttribute('id');
+          }
+      });
+
+      navLinks.forEach(item => {
+          item.classList.remove('active-link');
+          if (item.getAttribute('href').slice(1) === current) {
+              item.classList.add('active-link');
+          }
+      });
+  });
 });
-
-
 
 // Animate progress bars
 const progressBars = document.querySelectorAll('.progress-done');
@@ -58,32 +116,15 @@ circles.forEach(circle => {
     circle.style.setProperty('--percent', percent);
 });
 
-// Navigation menu toggle
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
-
-// Show menu
-if(navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu')
-    })
-}
-
-// Hide menu
-if(navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
-    })
-}
-
 // Theme change 
-const themeButton = document.getElementById('theme-button')
+const themeButton = document.getElementById('theme-button');
 
-themeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme')
-    themeButton.classList.toggle('uil-sun')
-})
+if (themeButton) {
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        themeButton.classList.toggle('uil-sun');
+    });
+}
 
 // Keep track of currently open modal
 let currentOpenModal = null;
@@ -91,23 +132,19 @@ let currentOpenModal = null;
 function toggleModal(modalId) {
     const modal = document.getElementById(modalId);
     
-    // Ensure modal exists
     if (!modal) {
         console.error('Modal not found:', modalId);
         return;
     }
 
-    // Force display style initialization
     if (!modal.style.display) {
         modal.style.display = "none";
     }
     
-    // If there's already an open modal and it's different from the one being opened
     if (currentOpenModal && currentOpenModal !== modal) {
         currentOpenModal.style.display = "none";
     }
     
-    // Toggle the clicked modal
     if (modal.style.display === "block") {
         modal.style.display = "none";
         currentOpenModal = null;
@@ -115,9 +152,6 @@ function toggleModal(modalId) {
         modal.style.display = "block";
         currentOpenModal = modal;
     }
-
-    // Debug log
-    console.log('Toggle modal:', modalId, 'Display:', modal.style.display);
 }
 
 // Close modal when clicking outside
@@ -153,7 +187,6 @@ function toggleDetails(id) {
     const button = details.previousElementSibling.querySelector('.qualification__button');
     const icon = button.querySelector('i');
     
-    // Close all other details first
     document.querySelectorAll('.qualification__details').forEach(detail => {
         if (detail.id !== id && detail.classList.contains('active')) {
             detail.classList.remove('active');
@@ -163,10 +196,8 @@ function toggleDetails(id) {
         }
     });
 
-    // Toggle current details
     details.classList.toggle('active');
     
-    // Update button text and icon
     if (details.classList.contains('active')) {
         button.innerHTML = `View Less <i class="uil uil-angle-up"></i>`;
     } else {
