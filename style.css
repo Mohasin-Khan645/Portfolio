@@ -10,7 +10,7 @@ body {
   background-color: #0c1a25;
   color: white;
   padding: 0px 0px;
-  padding-top: 60px; /* Reduced to match nav height */
+  padding-top: 60px; 
 }
 
 header {
@@ -21,7 +21,7 @@ header {
   background-color: #0c1a25;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 5px 10px; /* Reduced vertical padding */
+  padding: 5px 10px; 
 }
 
 nav ul {
@@ -29,19 +29,19 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end;  /* Keeps space between brand and nav items */
+  justify-content: flex-end;  
   align-items: center;
 }
 
 
 .nav-buttons {
   display: flex;
-  gap: 5px;  /* Consistent spacing between buttons */
+  gap: 5px;  
 }
 
 nav ul li {
   margin: 0;  
-  /* padding: 8px 12px; */
+ 
 }
 
 nav ul li a {
@@ -467,7 +467,7 @@ p {
 }
 
 .projects-section h2 span {
-  color: #00f260; /* Highlighted color */
+  color: #00f260; 
 }
 
 .projects-container {
@@ -638,4 +638,175 @@ p {
 .qualification__button.active i {
   transform: rotate(180deg);
   
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+  
+}
+
+
+@media screen and (max-width: 1200px) {
+    .intro, .about {
+        padding: 80px 40px;
+    }
+    
+    .intro-text h1, .about-text h2 {
+        font-size: 40px;
+    }
+    
+    .intro-image img, .about-image img {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .intro, .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .intro-text, .about-text {
+        max-width: 100%;
+    }
+    
+    .intro-image img, .about-image img {
+        width: 300px;
+    }
+    
+    .services-container {
+        justify-content: center;
+    }
+    
+    .service-box {
+        width: 280px;
+    }
+    
+    .qualification__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #0c1a25;
+        transition: .3s;
+    }
+    
+    .nav__menu.active {
+        left: 0;
+    }
+    
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    
+    .nav__item {
+        margin: 1rem 0;
+    }
+    
+    .intro-text h1, .about-text h2 {
+        font-size: 32px;
+    }
+    
+    .intro-text p, .about-text p {
+        font-size: 16px;
+    }
+    
+    .skills-section {
+        padding: 40px 20px;
+    }
+    
+    .circular-skills {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .circle {
+        margin: 20px;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .contact-form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .intro, .about {
+        padding: 60px 20px;
+    }
+    
+    .intro-text h1, .about-text h2 {
+        font-size: 28px;
+    }
+    
+    .intro-image img, .about-image img {
+        width: 250px;
+    }
+    
+    .service-box {
+        width: 100%;
+        margin: 10px;
+    }
+    
+    .qualification__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .qualification__button {
+        margin-top: 10px;
+    }
+    
+    .contact-form input, .contact-form textarea {
+        padding: 12px;
+    }
+}
+
+
+.nav__toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__toggle {
+        display: block;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+@supports (-webkit-touch-callout: none) {
+    .intro, .about {
+        min-height: -webkit-fill-available;
+    }
 }
