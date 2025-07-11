@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohasin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav container">
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="uil uil-bars"></i>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list grid">
+                <li class="nav__item">
+                  <a href="#home" class="nav__link active-link">
+                    <i class="uil uil-estate nav__icon"></i>Home
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#about" class="nav__link">
+                    <i class="uil uil-user nav__icon"></i>About
+                  </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">
+                        <i class="uil uil-file-alt nav__icon"></i>My Services
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#qualification" class="nav__link">
+                      <i class="uil uil-briefcase-alt nav__icon"></i>Qualification
+                    </a>
+                  </li>
+                <li class="nav__item">
+                    <a href="#skills" class="nav__link">
+                      <i class="uil uil-file-alt nav__icon"></i>Skills
+                    </a>
+                  </li>
+                <li class="nav__item">
+                  <a href="#portfolio" class="nav__link">
+                    <i class="uil uil-scenery nav__icon"></i>Projects
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#contact" class="nav__link">
+                    <i class="uil uil-message nav__icon"></i>Contact-Me
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="nav__btns">
+            </div>
+          </nav>
+    </header>
+    
+    <section class="intro" id="home">
+        <div class="intro-text">
+            <h1>Hi I'm<br><span>Mohammad Mohasin Khan</span><br>And I'm a <span class="typing-animation">Web Dev</span></h1>
+            <p>I'm a Second-year undergraduate engineering student at <b>Sri Venkateswara College of Engineering and Technologies</b>, Chittoor.</p>
+           
+            <a href="#contact" class="button button--flex">
+                <!-- Contact me<i class="uil uil-message button__icon"></i> -->
+              </a>
+        </div>
+        <div class="intro-image">
+            <img src="/mohasinkhan.jpg" alt="Mohammad Mohasin Khan">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="/profile-pic.png" alt="Mohammad Mohasin Khan">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h6>My Intoduction</h6>
+            
+            <p>
+                I'm a Second-year CSE undergraduate, passionate about technology and an avid reader. 
+                I have a self-motivated and can-do attitude, thriving in challenging and dynamic environments. 
+                Seeking a competitive position to enhance my skills and contribute to a professional organization. 
+                I'm very much passionate to learn new stuff that interests me and can help me to get better.
+            </p>
+            <a href="#" class="btn">More About Me</a>
+        </div>
+    </section>
+
+    <section class="my services" id="services">
+        <h2>My <span>Services</span></h2>
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-icon">⚙️</div>
+                <h3>UI/UX Design</h3>
+                <a href="#" class="btn">learn more</a>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">💻</div>
+                <h3>Web Design</h3>
+                <a href="#" class="btn">learn more</a>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <!--====== Qualification Section ======-->
+    <section class="qualification__section" id="qualification">
+        <h2 class="section__title">Qualification</h2>
+        <span class="section__subtitle">My personal journey</span>
+
+        <div class="qualification__container container">
+            <!-- SEE -->
+            <div class="qualification__content">
+                <div class="qualification__data">
+                    <div class="qualification__header">
+                        <h3 class="qualification__title">SEE</h3>
+                        <span class="qualification__subtitle">Evergreen English Boarding School</span>
+                        <div class="qualification__calendar">
+                            <i class="uil uil-calendar-alt"></i> 2021
+                        </div>
+                        <button class="qualification__button" onclick="toggleDetails('see')">
+                            View More <i class="uil uil-angle-down"></i>
+                        </button>
+                    </div>
+                    <div class="qualification__details" id="see">
+                        <ul>
+                            <li>Subjects: Science, Maths, English, Social Studies, Nepali</li>
+                            <li>Scored: 81%</li>
+                            <li>Achievements: Runners-up in District-Leve Cricket</li>
+                            <li>Achievements: First in District-Leve Kabaddi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 12 -->
+            <div class="qualification__content">
+                <div class="qualification__data">
+                    <div class="qualification__header">
+                        <h3 class="qualification__title">Class 12th</h3>
+                        <span class="qualification__subtitle">Tilottama Campus</span>
+                        <div class="qualification__calendar">
+                            <i class="uil uil-calendar-alt"></i> 2023
+                        </div>
+                        <button class="qualification__button" onclick="toggleDetails('class12')">
+                            View More <i class="uil uil-angle-down"></i>
+                        </button>
+                    </div>
+                    <div class="qualification__details" id="class12">
+                        <ul>
+                            <li>Subjects: Physics, Chemistry, Maths, English, Computer, Nepali</li>
+                            <li>Scored: 79%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- College -->
+            <div class="qualification__content">
+                <div class="qualification__data">
+                    <div class="qualification__header">
+                        <h3 class="qualification__title">College</h3>
+                        <span class="qualification__subtitle">Sri Venkateswara College of Engineering</span>
+                        <div class="qualification__calendar">
+                            <i class="uil uil-calendar-alt"></i> 2023 - 2027
+                        </div>
+                        <button class="qualification__button" onclick="toggleDetails('college')">
+                            View More <i class="uil uil-angle-down"></i>
+                        </button>
+                    </div>
+                    <div class="qualification__details" id="college">
+                        <ul>
+                            <li>Branch: Computer Science and Engineering</li>
+                            <li>Current CGPA: 7.40</li>
+                            <li>Activities: Student coordinator in media club</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="skills-section" id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-bar">
+            <p>HTML</p>
+            <div class="progress">
+                <div class="progress-done" data-done="90"></div>
+            </div>
+        </div>
+    
+        <div class="skill-bar">
+            <p>CSS</p>
+            <div class="progress">
+                <div class="progress-done" data-done="85"></div>
+            </div>
+        </div>
+    
+        <div class="skill-bar">
+            <p>Javascript</p>
+            <div class="progress">
+                <div class="progress-done" data-done="60"></div>
+            </div>
+        </div>
+    
+        <div class="skill-bar">
+            <p>Python</p>
+            <div class="progress">
+                <div class="progress-done" data-done="60"></div>
+            </div>
+        </div>
+
+        <div class="skill-bar">
+            <p>Java</p>
+            <div class="progress">
+                <div class="progress-done" data-done="75"></div>
+            </div>
+        </div>
+
+            <div class="skill-bar">
+              <p>Database</p>
+              <div class="progress">
+                <div class="progress-done" data-done="50"></div>
+                </div>
+            </div>
+    
+        <h2>Professional Skills</h2>
+        <div class="circular-skills">
+            <div class="circle" data-percent="90">
+                <div class="inner-circle">90%</div>
+                <p>Creativity</p>
+            </div>
+    
+            <div class="circle" data-percent="65">
+                <div class="inner-circle">65%</div>
+                <p>Communication</p>
+            </div>
+    
+            <div class="circle" data-percent="75">
+                <div class="inner-circle">75%</div>
+                <p>Problem Solving</p>
+            </div>
+    
+            <div class="circle" data-percent="85">
+                <div class="inner-circle">85%</div>
+                <p>Teamwork</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="projects-section" id="portfolio">
+        <h2>Latest <span>Project</span></h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <a href="https://github.com/mohasin-Khan645/HouseRentalSystem" target="_blank">
+                    <img src="https://codewithcurious.com/wp-content/uploads/2024/08/Handwritten-Notes-2024-09-10T001457.243.png.webp" alt="Project 1">
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/mohasin-Khan645/" target="_blank">
+                <img src="https://okcredit-blog-images-prod.storage.googleapis.com/2021/04/ecommerce3-2.jpg" alt="Project 2">
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/mohasin-Khan645" target="_blank">
+                <img src="https://media.geeksforgeeks.org/img-practice/prod/courses/241/Web/Content/FSRNL_1705410152.webp" alt="Project 3">
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Contact <span>Me</span></h2>
+                <p>Let's Work Together</p>
+                
+                <p><strong>Email:</strong> khanmohasin174@gmail.com</p>
+                <p><strong>Phone:</strong> +9779819413511</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1JNhcywQrq/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/Mohasin645?t=eeooximFnQAInZBJI2Ol6Q&s=09"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/mohasin_khan645?igsh=MTBmcHphNGwyaHhlYw=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/mohasin-khan-086a66301?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B05iySMNhTGSBuK0Ynf%2BeVg%3D%3D"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mohasin-Khan645"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="#">
+                    <input type="text" placeholder="Enter Your Name" required>
+                    <input type="email" placeholder="Enter Your Email" required>
+                    <input type="text" placeholder="Enter Your Subject" required>
+                    <textarea placeholder="Enter Your Message" required></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <h2 class="footer__title">Mohasin Khan</h2>
+            <ul class="footer__list">
+                <li>
+                    <a href="#home" class="footer__link">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="footer__link">About</a>
+                </li>
+                <li>
+                    <a href="#services" class="footer__link">Services</a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="footer__link">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact" class="footer__link">Contact</a>
+                </li>
+            </ul>
+            <div class="footer__socials">
+                <a href="https://github.com/mohasin-Khan645" class="footer__social" target="_blank">
+                    <i class="uil uil-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mohasin-khan-086a66301?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B05iySMNhTGSBuK0Ynf%2BeVg%3D%3D" class="footer__social" target="_blank">
+                    <i class="uil uil-linkedin"></i>
+                </a>
+                <a href="https://x.com/Mohasin645?t=eeooximFnQAInZBJI2Ol6Q&s=09" class="footer__social" target="_blank">
+                    <i class="uil uil-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/mohasin_khan645?igsh=MTBmcHphNGwyaHhlYw==" class="footer__social" target="_blank">
+                    <i class="uil uil-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1JNhcywQrq/" class="footer__social" target="_blank">
+                    <i class="uil uil-facebook"></i>
+                </a>
+            </div>
+            <span class="footer__copy">&#169; 2025 Mohasin Khan. All rights reserved.</span>
+        </div>
+    </footer>
+</body>
+</html>
